@@ -27,10 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "")
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "False").lower() == "true"
-ALLOWED_HOSTS =[
+ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "testserver",
+    ".onrender.com",
 ]
 
 
@@ -149,6 +150,7 @@ MAILERS = {
 }
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://YOUR-VERCEL-DOMAIN.vercel.app",
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
